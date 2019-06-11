@@ -1,5 +1,18 @@
-import clsSplitFiles as t
-import clsMergeFiles as cm
+###############################################
+#### Written By: SATYAKI DE                ####
+#### Written On: 10-Feb-2019               ####
+#### Pandas, Regular Expression, gc        ####
+#### needs to install in order to run      ####
+#### this script.                          ####
+####                                       ####
+#### Objective: This script will           ####
+#### call both the split & merge libraries ####
+#### to simulate both the cases using      ####
+#### large csv files.                      ####
+###############################################
+
+from SplitMerge.clsSplitFiles import clsSplitFiles
+from SplitMerge.clsMergeFiles import clsMergeFiles
 import re
 import platform as pl
 import os
@@ -28,10 +41,8 @@ def main():
     ###############################################################
     ###### End Of User Input                                 ######
     ###############################################################
-
-    x = t.clsSplitFiles(srcF, path, subdir)
-
-    ret_val = x.split_files()
+    t = clsSplitFiles(srcF, path, subdir)
+    ret_val = t.split_files()
 
     if ret_val == 0:
         print("Splitting Successful!")
@@ -42,8 +53,7 @@ def main():
 
     print("Finally, Merging small splitted files to make the same big file!")
 
-    y = cm.clsMergeFiles(srcFileInit)
-
+    y = clsMergeFiles(srcFileInit, path)
     ret_val1 = y.merge_file()
 
     if ret_val1 == 0:
