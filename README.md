@@ -66,6 +66,10 @@ Sample Code to use this library. You can name it as ->
         ###############################################################
         ###### End Of User Input                                 ######
         ###############################################################
+		
+		###############################################################
+        ######             Begining of Split Process             ######
+        ###############################################################
     
         t = clsSplitFiles(srcF, path, subdir)
         ret_val = t.split_files()
@@ -76,8 +80,15 @@ Sample Code to use this library. You can name it as ->
             print("Splitting Failure!")
     
         print("-"*30)
+		###############################################################
+        ######               End of Split Process                ######
+        ###############################################################
     
         print("Finally, Merging small splitted files to make the same big file!")
+		
+		###############################################################
+        ######             Begining of Merge Process             ######
+        ###############################################################
     
         y = clsMergeFiles(srcFileInit, path)
         ret_val1 = y.merge_file()
@@ -88,6 +99,10 @@ Sample Code to use this library. You can name it as ->
             print("Merge Failure!")
     
         print("-"*30)
+		
+		###############################################################
+        ######               End of Merge Process                ######
+        ###############################################################
     
     
     if __name__ == "__main__":
