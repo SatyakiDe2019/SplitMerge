@@ -4,18 +4,31 @@ Splitting a large CSV file into multiple small csv files for better processing u
 
 ### Limitations
 
+## Split
+
 As of now, this will create splitted file with the extension known as "_splitted_". Make sure that your original file should not contain the same naming pattern.
 
 > Your source file name for example - customer_addr_20180112.csv
+>
 > Your split file name will will be given below: 
->    1__customer_addr_20180112__splitted_.csv
->    2__customer_addr_20180112__splitted_.csv
->    ....
->    N__customer_addr_20180112__splitted_.csv
+
+    1__customer_addr_20180112__splitted_.csv
+    2__customer_addr_20180112__splitted_.csv
+    ....
+    N__customer_addr_20180112__splitted_.csv
+	
 > Where N would be any number based on the size of the file.
 > Bye default, each chunk will contain at least 30000 or less number of records.
 
-This requires pandas & regular expression package installed in your python environment.
+## Merge
+
+For merge, it will pick-up from the temp directory as mentioned in the bottom of this page. And, it will create a final merged file with this kind of naming convention -
+
+    customer_addr_20180112_.csv
+	
+Final, file will be places under process directory. Please refer the bottom of this page for directory structure & placement of the main calling file.
+
+This package requires pandas & regular expression package to be installed in your python environment.
 
 Sample Code to use this library. You can name it as -> 
 
@@ -89,6 +102,7 @@ Sample Code to use this library. You can name it as ->
 > Dependancy Package: You need to install followig packages in order to run this package -
 >
 >                     pip install pandas
+>                     pip install regex
 ------------------------------------------------------------------------------------------
     Directory Structure shoould be like ->
 ------------------------------------------------------------------------------------------
