@@ -8,9 +8,10 @@ As of now, this will create splitted file with the extension known as "_splitted
 
 > Your source file name for example - customer_addr_20180112.csv
 > Your split file name will will be given below: 
-> 	1__customer_addr_20180112__splitted_.csv
-> 	2__customer_addr_20180112__splitted_.csv
-> 	N__customer_addr_20180112__splitted_.csv
+>    1__customer_addr_20180112__splitted_.csv
+>    2__customer_addr_20180112__splitted_.csv
+>    ....
+>    N__customer_addr_20180112__splitted_.csv
 > Where N would be any number based on the size of the file.
 > Bye default, each chunk will contain at least 30000 or less number of records.
 
@@ -18,9 +19,9 @@ This requires pandas & regular expression package installed in your python envir
 
 Sample Code to use this library. You can name it as -> 
 
---------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
                          callSplitMergeFiles.py
---------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
 
     from SplitMerge.clsSplitFiles import clsSplitFiles
     from SplitMerge.clsMergeFiles import clsMergeFiles
@@ -76,16 +77,24 @@ Sample Code to use this library. You can name it as ->
         print("-"*30)
     
     
-    
     if __name__ == "__main__":
         main()
 		
---------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
                  End Of Sample Code - callSplitMergeFiles.py
---------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
 
 > Bug Fix: 1. Module loading issue fixed.
 >          2. Source & Target directory as per developer's choice.
 > Dependancy Package: You need to install followig packages in order to run this package -
 >
 >                     pip install pandas
+------------------------------------------------------------------------------------------
+    Directory Structure shoould be like ->
+------------------------------------------------------------------------------------------
+    -> \callSplitMergeFiles.py
+    -> \process\
+    -> \src_file\
+    -> \temp\
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
